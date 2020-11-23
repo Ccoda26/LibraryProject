@@ -72,24 +72,24 @@ class Category
     }
 
 
-    public function getPublicationdate(): ?date
+    public function getPublicationdate(): ?\DateTimeInterface
     {
         return $this->publicationdate;
     }
 
-    public function setPublicationdate(\date $publicationdate): self
+    public function setPublicationdate(\DateTimeInterface $publicationdate): self
     {
         $this->publicationdate = $publicationdate;
 
         return $this;
     }
 
-    public function getCreationdate(): ?\date
+    public function getCreationdate(): ?\DateTimeInterface
     {
         return $this->creationdate;
     }
 
-    public function setCreationdate(\date $creationdate): self
+    public function setCreationdate(\DateTimeInterface $creationdate): self
     {
         $this->creationdate = $creationdate;
 
