@@ -33,12 +33,12 @@ class Article
     private $picture;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="date", length=255, nullable=true)
      */
     private $publicationdate;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="date", length=255, nullable=true)
      */
     private $creationdate;
 
@@ -88,24 +88,24 @@ class Article
         return $this;
     }
 
-    public function getPublicationdate(): ?string
+    public function getPublicationdate(): ?date
     {
         return $this->publicationdate;
     }
 
-    public function setPublicationdate(?string $publicationdate): self
+    public function setPublicationdate(?date $publicationdate): self
     {
         $this->publicationdate = $publicationdate;
 
         return $this;
     }
 
-    public function getCreationdate(): ?string
+    public function getCreationdate(): ?date
     {
         return $this->creationdate;
     }
 
-    public function setCreationdate(?string $creationdate): self
+    public function setCreationdate(?date $creationdate): self
     {
         $this->creationdate = $creationdate;
 

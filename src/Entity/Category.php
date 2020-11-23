@@ -28,12 +28,12 @@ class Category
     private $color;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="date", nullable=true)
      */
     private $publicationdate;
 
     /**
-     * @ORM\Column(type="datetime" , nullable=true)
+     * @ORM\Column(type="date" , nullable=true)
      */
     private $creationdate;
 
@@ -72,24 +72,24 @@ class Category
     }
 
 
-    public function getPublicationdate(): ?\DateTimeInterface
+    public function getPublicationdate(): ?date
     {
         return $this->publicationdate;
     }
 
-    public function setPublicationdate(\DateTimeInterface $publicationdate): self
+    public function setPublicationdate(\date $publicationdate): self
     {
         $this->publicationdate = $publicationdate;
 
         return $this;
     }
 
-    public function getCreationdate(): ?\DateTimeInterface
+    public function getCreationdate(): ?\date
     {
         return $this->creationdate;
     }
 
-    public function setCreationdate(\DateTimeInterface $creationdate): self
+    public function setCreationdate(\date $creationdate): self
     {
         $this->creationdate = $creationdate;
 
