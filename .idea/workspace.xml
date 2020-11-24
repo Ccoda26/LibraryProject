@@ -20,13 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49ca40cf-d06d-4739-b110-206e699d710b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/article.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/catégory.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/thearticle.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/thecategory.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/catégory.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,11 +162,12 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\COURS_SYMFO\LibrariesProject\templates" />
       <recent name="C:\wamp64\www\COURS_SYMFO\LibrariesProject" />
     </key>
   </component>
@@ -179,7 +180,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606143306881</updated>
       <workItem from="1606143308106" duration="3668000" />
-      <workItem from="1606208853832" duration="4050000" />
+      <workItem from="1606208853832" duration="7015000" />
     </task>
     <servers />
   </component>
@@ -206,6 +207,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="521" y="134" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1606212182645" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1606217148376">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1606217148376" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1606211991686">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

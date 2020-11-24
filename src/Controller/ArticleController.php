@@ -14,11 +14,27 @@ class ArticleController extends AbstractController
     /**
      * @Route("/article/list", name="Article-List")
      */
+
+    /* le 'Repository equivalent SELECT sql permet d'utiliser toutes les methodes find*/
     public function ArticleList(ArticleRepository $articleRepository){
         $article = $articleRepository ->findAll();
 
         return $this->render("article.html.twig", [
             'articles' => $article
         ]);
+    }
+
+    /**
+     * @Route("/article/list/{id}", name="ArticleShow")
+     */
+    public function TheArticle(ArticleRepository $articleRepository, $id)
+    {
+        {
+            $article = $articleRepository->find($id);
+
+            return $this->render("thearticle.html.twig", [
+                'article' => $article
+            ]);
+        }
     }
 }

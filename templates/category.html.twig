@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+    {% for category in categories %}
+        <h1>
+            <a href="{{ path('CategoryShow', {'id' : category.id}) }}">
+                {{ category.title }}
+            </a>
+        </h1>
+
+    {% endfor %}
+
+</body>
+</html>

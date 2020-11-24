@@ -7,13 +7,9 @@
 <body>
 
     {% for article in articles %}
-      <h1>{{ article.title }}</h1>
-      <p>{{ article.content }}</p>
-        <div>
-      <img src="{{ article.picture }}">
-        </div>
-      <span> Date de creation : {{ article.creationdate|date("m/d/Y h:m:s") }}</span> <br>
-      <span> Date de publication : {{ article.publicationdate|date("m/d/Y h:m:s")}}</span>
+    <h1>
+        <a href="{{ path('ArticleShow', {'id' : article.id}) }}">{{ article.title }}</a>
+    </h1>
     {% endfor %}
 
 
