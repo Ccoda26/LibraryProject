@@ -28,12 +28,12 @@ class Category
     private $color;
 
     /**
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $publicationdate;
 
     /**
-     * @ORM\Column(type="date" , nullable=true)
+     * @ORM\Column(type="datetime" , nullable=true)
      */
     private $creationdate;
 
