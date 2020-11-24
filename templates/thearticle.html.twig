@@ -6,16 +6,15 @@
 </head>
 <body>
 
-
       <h1>{{ article.title }}</h1>
       <p>{{ article.content }}</p>
         <div>
       <img src="{{ article.picture }}">
         </div>
-      <span> Date de creation : {{ article.creationdate|date("m/d/Y h:m:s") }}</span> <br>
+      {# filtre |date permet de mettre un format au typr date sinon ça s'affiche pas #}
+      <span> Date de creation : {{ article.creationdate|date("m/d/Y h:m:s") }}</span>
+      <br>
       <span> Date de publication : {{ article.publicationdate|date("m/d/Y h:m:s")}}</span>
-
-
 
 </body>
 </html>

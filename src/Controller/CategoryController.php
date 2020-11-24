@@ -11,9 +11,11 @@ class CategoryController extends AbstractController
 {
 
     /**
-     * @Route("/category/list", name="Category_List")
+     * @Route("/category/list", name="category_List")
      */
+
     public function CatégoryList(CategoryRepository $categoryRepository){
+        /* findAll() = select * from catégory */
         $categories = $categoryRepository ->findAll();
 
         return $this->render("category.html.twig", [
@@ -22,9 +24,11 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("/category/list/{id}", name="CategoryShow")
+     * @Route("/category/list/{id}", name="categoryShow")
      */
+
     public function CatégoryShow(CategoryRepository $categoryRepository, $id){
+         /* find(critere) = select infos Where param = url */
         $categories = $categoryRepository ->find($id);
 
         return $this->render("thecategory.html.twig", [

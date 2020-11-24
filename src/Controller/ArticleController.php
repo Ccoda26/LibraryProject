@@ -12,7 +12,7 @@ class ArticleController extends AbstractController
 {
 
     /**
-     * @Route("/article/list", name="Article-List")
+     * @Route("/article/list", name="article-List")
      */
 
     /* le 'Repository equivalent SELECT sql permet d'utiliser toutes les methodes find*/
@@ -25,7 +25,7 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/article/list/{id}", name="ArticleShow")
+     * @Route("/article/list/{id}", name="articleShow")
      */
     public function TheArticle(ArticleRepository $articleRepository, $id)
     {

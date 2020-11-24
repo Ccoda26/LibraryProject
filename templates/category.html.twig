@@ -9,7 +9,8 @@
 
     {% for category in categories %}
         <h1>
-            <a href="{{ path('CategoryShow', {'id' : category.id}) }}">
+
+            <a href="{{ path('categoryShow', {'id' : category.id}) }}">
                 {{ category.title }}
             </a>
         </h1>
