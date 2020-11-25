@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Entity\Article;
 use App\Repository\ArticleRepository;
+use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,12 +23,12 @@ class CreateArticle extends AbstractController
         $entityManager = $this->getDoctrine()->getManager();
 
         $article = new Article();
-        $article->setTitle('Aie Aie Aie');
-        $article->setContent("le beau paysage que je vois il est beau alors qu'il est beau");
-        $article->setPicture('https://cdn.pixabay.com/photo/2016/06/28/01/42/landscape-1483737_960_720.jpg');
+        $article->setTitle('La plus valus du congo');
+        $article->setContent("La congolexicomatisation c'est inndispensable au congo");
+        $article->setPicture('https://images-na.ssl-images-amazon.com/images/I/71IHBrW5CiL._AC_SY450_.jpg');
         $article->setCreationdate(new \DateTime());
         $article->setPublicationdate(new \DateTime());
-        $article->setPublished(0);
+        $article->setPublished(1);
 
         // tell Doctrine you want to (eventually) save the Product (no queries yet)
         $entityManager->persist($article);
@@ -49,8 +50,8 @@ class CreateArticle extends AbstractController
 
         $article = $articleRepository->find($id);
 
-        $article->setTitle("Le soleil d'equateur");
-        $article->setContent("Un océan est souvent défini, en géographie, comme une vaste étendue d'eau salée comprise entre deux continents");
+        $article->setTitle("Le perroquet");
+        $article->setContent("Il est beau, il est bon mon perroquet, yen auras pas pour tout le monde");
 
         $entityManager->persist($article);
 
@@ -59,5 +60,23 @@ class CreateArticle extends AbstractController
 
         return $this->render('updatesArticle.html.twig');
     }
+    /**
+     * @param ArticleRepository $articleRepository
+     * @param EntityManagerInterface $entityManager
+     * @Route("/delete-article/{id}", name="delete_article")
+     */
+    public function deleteArticle(ArticleRepository $articleRepository, $id, EntityManagerInterface $entityManager){
 
+
+        // select l'id pour updates la bonne ligne
+        $article = $articleRepository->find($id);
+
+
+    if (!is_null($article)){
+        $entityManager->remove($article);
+        $entityManager->flush();
+    }
+
+        return $this->render('deleteArticle.html.twig');
+    }
 }

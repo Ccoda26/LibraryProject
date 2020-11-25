@@ -11,6 +11,7 @@
         <a href="{{ path('articleShow', {'id' : article.id}) }}">{{ article.title }}</a>
     </h1>
         <p><a href="{{ path('update_article', {'id' : article.id}) }}">Update ça</a></p>
+        <p><a href="{{ path('delete_article', {'id' : article.id}) }}">Supprime ça</a></p>
     {% endfor %}
 
 </body>
