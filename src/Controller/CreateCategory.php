@@ -6,11 +6,12 @@ namespace App\Controller;
 
 
 use App\Entity\Category;
+use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class CategoryDonnees extends AbstractController
+class CreateCategory extends AbstractController
 {
 
     /**
@@ -18,7 +19,8 @@ class CategoryDonnees extends AbstractController
      * @return Response
      * @Route("/category/insert", name="category_insert")
      */
-    
+
+    // entityMangaer et la methodes pour Insert en sql
     public function insertCategory(EntityManagerInterface $entityManager){
         $entityManager = $this->getDoctrine()->getManager();
 
@@ -35,7 +37,28 @@ class CategoryDonnees extends AbstractController
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
 
-        return $this->render('categoryinsert.html.twig');
+        return $this->render('categoryInsert.html.twig');
 
+    }
+
+
+    /**
+     * @Route("/update-category/{id}", name="update_category")
+     */
+
+    public function updatecategory(categoryRepository $categoryRepository, EntityManagerInterface $entityManager, $id){
+
+        $category = $categoryRepository->find($id);
+
+        $category->setTitle("Le soleil");
+        $category->setColor("yellow");
+
+
+        $entityManager->persist($category);
+
+        // actually executes the queries (i.e. the INSERT query)
+        $entityManager->flush();
+
+        return $this->render('updatesCategory.html.twig');
     }
 }

@@ -10,6 +10,7 @@
     <h1>
         <a href="{{ path('articleShow', {'id' : article.id}) }}">{{ article.title }}</a>
     </h1>
+        <p><a href="{{ path('update_article', {'id' : article.id}) }}">Update ça</a></p>
     {% endfor %}
 
 </body>

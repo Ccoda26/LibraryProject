@@ -5,11 +5,12 @@ namespace App\Controller;
 
 
 use App\Entity\Article;
+use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class InsertDonnees extends AbstractController
+class CreateArticle extends AbstractController
 {
     /**
      * @param EntityManagerInterface $entityManager
@@ -37,4 +38,26 @@ class InsertDonnees extends AbstractController
         return $this->render('insert.html.twig');
 
 }
+
+    /**
+     * @param ArticleRepository $articleRepository
+     * @param EntityManagerInterface $entityManager
+     * @Route("/update-article/{id}", name="update_article")
+     */
+
+    public function updateArticle(ArticleRepository $articleRepository, EntityManagerInterface $entityManager, $id){
+
+        $article = $articleRepository->find($id);
+
+        $article->setTitle("Le soleil d'equateur");
+        $article->setContent("Un océan est souvent défini, en géographie, comme une vaste étendue d'eau salée comprise entre deux continents");
+
+        $entityManager->persist($article);
+
+        // actually executes the queries (i.e. the INSERT query)
+        $entityManager->flush();
+
+        return $this->render('updatesArticle.html.twig');
+    }
+
 }
