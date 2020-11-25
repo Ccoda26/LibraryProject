@@ -47,18 +47,18 @@ class CreateCategory extends AbstractController
      */
 
     public function updatecategory(categoryRepository $categoryRepository, EntityManagerInterface $entityManager, $id){
-
+        // select l'id pour updates la bonne ligne
         $category = $categoryRepository->find($id);
 
         $category->setTitle("Le soleil");
         $category->setColor("yellow");
 
-
+        // pré-enregistre les informations avant l'envoi
         $entityManager->persist($category);
 
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
-
+        // envoi les infos vers mon fichier twig pour les afficher
         return $this->render('updatesCategory.html.twig');
     }
 }

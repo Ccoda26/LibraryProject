@@ -35,7 +35,7 @@ class CreateArticle extends AbstractController
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
 
-        return $this->render('insert.html.twig');
+        return $this->render('insertArticle.html.twig');
 
 }
 

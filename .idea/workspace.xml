@@ -20,13 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49ca40cf-d06d-4739-b110-206e699d710b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/updatesArticle.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/updatesCategory.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CreateArticle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CreateArticle.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CreateCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CreateCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/insert.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/insertArticle.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +176,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606143306881</updated>
       <workItem from="1606143308106" duration="3668000" />
-      <workItem from="1606208853832" duration="20084000" />
+      <workItem from="1606208853832" duration="20661000" />
     </task>
     <servers />
   </component>
