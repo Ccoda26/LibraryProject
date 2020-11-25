@@ -24,7 +24,7 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("/category/list/{id}", name="categoryShow")
+     * @Route("/category/show/{id}", name="categoryShow")
      */
 
     public function CatégoryShow(CategoryRepository $categoryRepository, $id){

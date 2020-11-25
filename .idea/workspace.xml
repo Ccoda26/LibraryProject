@@ -23,10 +23,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryDonnees.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryDonnees.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/InsertDonnees.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/InsertDonnees.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/categoryInsert.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/categoryInsert.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/thearticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/thearticle.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/thecategory.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/thecategory.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +181,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606143306881</updated>
       <workItem from="1606143308106" duration="3668000" />
-      <workItem from="1606208853832" duration="10076000" />
+      <workItem from="1606208853832" duration="16935000" />
     </task>
     <servers />
   </component>
@@ -199,14 +200,18 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="498" y="166" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606212205537">
+    <state x="498" y="166" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606299387473">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="498" y="166" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1606212205537" />
-    <state x="521" y="134" key="NewPhpClassDialog" timestamp="1606212182645">
+    <state x="498" y="166" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1606299387473" />
+    <state x="548" y="153" key="FileChooserDialogImpl" timestamp="1606295668633">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="521" y="134" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1606212182645" />
+    <state x="548" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606295668633" />
+    <state x="521" y="134" key="NewPhpClassDialog" timestamp="1606299380887">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="521" y="134" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1606299380887" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1606217148376">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
