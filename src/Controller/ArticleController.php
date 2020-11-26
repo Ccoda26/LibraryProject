@@ -7,6 +7,7 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use http\Message;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -98,11 +99,20 @@ class ArticleController extends AbstractController
         $article = $articleRepository->find($id);
 
 
-        if (!is_null($article)){
+        if (!is_null($article)) {
             $entityManager->remove($article);
             $entityManager->flush();
+            // ajoute le message d'erreur de types success => action bien prise en compte
+            // ajout du message => article est supprimé
+            $this->addFlash('success',
+                'Article est supprimé !');
         }
 
-        return $this->render('deleteArticle.html.twig');
+        // Le message est pris en compte est trasmis à la method ArticleList et donc envoyé au fichier twig
+        // -> de la liste des articles
+        return $this->redirectToRoute('article-List');
+
     }
+
+
 }

@@ -5,10 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-<p>
-{{ form(form.title) }} {{ form(form.content) }}
 
-</p>
-<span>{{ form(form.author) }}</span>
+{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+{{ form_row(form.title) }}
+{{ form_row(form.content) }}
+{{ form_row(form.author) }}
+
+<button type="submit" class="btn btn-primary">Créer</button>
+{{ form_end(form) }}
+
 </body>
 </html>
