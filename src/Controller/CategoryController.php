@@ -8,6 +8,7 @@ use App\Form\CategoryType;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CategoryController extends AbstractController
@@ -42,14 +43,28 @@ class CategoryController extends AbstractController
      * @Route("/category/insert", name="category_insert")
      */
 
-    public function insertCategory(){
+    public function insertCategory(Request $request){
+
+        $category = new Category();
         // createForm methode appartient au abstractController
         // appelle de la classe CategoryType dans dossier form
         // il va recuperer dans la class entité Catégory les types pour obtenir les bon inputs en twig
-        $form = $this-> createForm(CategoryType::class);
+        $form = $this-> createForm(CategoryType::class, $category);
 
         // createView methode propre au formulaire pour permettre a twig de recuperer le formulaire
+
+        $form->handleRequest($request);
+
         $formView = $form->createView();
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+
+            $entityManager->persist($category);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('category_List');
+        }
 
         return $this->render('insertCategory.html.twig',[
             'formView' => $formView
@@ -61,20 +76,25 @@ class CategoryController extends AbstractController
      * @Route("/update-category/{id}", name="update_category")
      */
 
-    public function updatecategory(categoryRepository $categoryRepository, EntityManagerInterface $entityManager, $id){
-        // select l'id pour updates la bonne ligne
-        $category = $categoryRepository->find($id);
+    public function updatecategory(Request $request, Category $category){
 
-        $category->setTitle("Le soleil");
-        $category->setColor("yellow");
+        $form = $this->createForm(CategoryType::class, $category);
 
-        // pré-enregistre les informations avant l'envoi
-        $entityManager->persist($category);
+        $form->handleRequest($request);
+        $formView = $form->createView();
 
-        // actually executes the queries (i.e. the INSERT query)
-        $entityManager->flush();
-        // envoi les infos vers mon fichier twig pour les afficher
-        return $this->render('updatesCategory.html.twig');
+        if ($form->isSubmitted() && $form->isValid()) {
+            // va effectuer la requête d'UPDATE en base de données
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('category_List');
+        }
+
+        return $this->render('updatesCategory.html.twig', [
+            'formView' => $formView
+        ]);
+
+
     }
 
     /**
@@ -102,4 +122,6 @@ class CategoryController extends AbstractController
         return $this->redirectToRoute('category_List');
 
     }
+
+
 }

@@ -10,6 +10,7 @@ use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use http\Message;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ArticleController extends AbstractController
@@ -45,15 +46,28 @@ class ArticleController extends AbstractController
      * @Route("/article/insert", name="page_insert")
      */
 
-    public function insertArticle(){
+    public function insertArticle(Request $request){
         // createForm methode appartient au abstractController
         // appelle de la classe CategoryType dans dossier form
         // il va recuperer dans la class entité Catégory les types pour obtenir les bon inputs en twig
 
-        $form = $this->createForm(ArticleType::class);
+        $article = new Article();
+
+        $form = $this->createForm(ArticleType::class, $article);
+
+        $form->handleRequest($request);
+
         // createView methode propre au formulaire pour permettre a twig de recuperer le formulaire
         $formView = $form->createView();
 
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+
+            $entityManager->persist($article);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('article_List');
+        }
         return $this->render('insertArticle.html.twig',[
             'formView' => $formView
         ]);
@@ -61,25 +75,28 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @param ArticleRepository $articleRepository
-     * @param EntityManagerInterface $entityManager
      * @Route("/update-article/{id}", name="update_article")
      */
 
-    public function updateArticle(ArticleRepository $articleRepository, EntityManagerInterface $entityManager, $id){
+    public function updateArticle(Request $request, Article $article)
+    {
+        $form = $this->createForm(ArticleType::class, $article);
 
-        $article = $articleRepository->find($id);
+        $form->handleRequest($request);
+        $formView = $form->createView();
 
-        $article->setTitle("Le perroquet");
-        $article->setContent("Il est beau, il est bon mon perroquet, yen auras pas pour tout le monde");
+        if ($form->isSubmitted() && $form->isValid()) {
+            // va effectuer la requête d'UPDATE en base de données
+            $this->getDoctrine()->getManager()->flush();
 
-        $entityManager->persist($article);
+            return $this->redirectToRoute('article_List');
+        }
 
-        // actually executes the queries (i.e. the INSERT query)
-        $entityManager->flush();
-
-        return $this->render('updatesArticle.html.twig');
+        return $this->render('updatesArticle.html.twig', [
+            'formView' => $formView
+        ]);
     }
+
     /**
      * @param ArticleRepository $articleRepository
      * @param EntityManagerInterface $entityManager

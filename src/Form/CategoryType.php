@@ -4,6 +4,8 @@ namespace App\Form;
 
 use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,9 +16,16 @@ class CategoryType extends AbstractType
         $builder
             ->add('title')
             ->add('color')
-            ->add('publicationdate')
-            ->add('creationdate')
+            ->add('publicationdate',DateType::class, [
+                'widget' => 'single_text',
+                // this is actually the default format for single_text
+                'format' => 'yyyy-MM-dd'])
+            ->add('creationdate',DateType::class, [
+                'widget' => 'single_text',
+                // this is actually the default format for single_text
+                'format' => 'yyyy-MM-dd'])
             ->add('published')
+            ->add('valider',SubmitType::class)
         ;
     }
 

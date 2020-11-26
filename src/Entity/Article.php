@@ -44,6 +44,7 @@ class Article
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     *
      */
     private $published;
 

@@ -23,11 +23,12 @@
 <p><a href="{{ path('category_insert') }}">Creation divine</a></p>
     {% for category in categories %}
         <h1 >
-            <a href="{{ path('categoryShow', {'id' : category.id}) }}" >
+            <a href="{{ path('categoryShow', {'id' : category.id}) }}" style="color: {{ category.color }}">
                 {{ category.title }}
             </a>
         </h1>
         <p><a href="{{ path('update_category', {'id' : category.id}) }}">Update ça</a></p>
+        <p><a href="{{ path('delete_category', {'id' : category.id}) }}">Supprime ça</a></p>
     {% endfor %}
 
 </body>
