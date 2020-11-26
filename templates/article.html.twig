@@ -13,7 +13,7 @@
         </p>
     {% endfor %}
 </header>
-
+<p><a href="{{ path('page_insert') }}">Creation divine</a></p>
     {% for article in articles %}
     <h1>
         <a href="{{ path('articleShow', {'id' : article.id}) }}">{{ article.title }}</a>

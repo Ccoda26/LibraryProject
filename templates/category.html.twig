@@ -11,8 +11,16 @@
    </style>
 
 </head>
+<header>
+    {# recupere la variable message de la notif flash en gardant que le messsage #}
+    {% for message in app.flashes('success') %}
+        <p>
+            {{ message }}
+        </p>
+    {% endfor %}
+</header>
 <body>
-
+<p><a href="{{ path('category_insert') }}">Creation divine</a></p>
     {% for category in categories %}
         <h1 >
             <a href="{{ path('categoryShow', {'id' : category.id}) }}" >

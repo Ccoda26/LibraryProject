@@ -5,6 +5,7 @@ namespace App\Controller;
 
 
 use App\Entity\Article;
+use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use http\Message;
@@ -15,7 +16,7 @@ class ArticleController extends AbstractController
 {
 
     /**
-     * @Route("/article/list", name="article-List")
+     * @Route("/article/list", name="article_List")
      */
 
     /* le 'Repository equivalent SELECT sql permet d'utiliser toutes les methodes find*/
@@ -41,29 +42,21 @@ class ArticleController extends AbstractController
         }
     }
     /**
-     * @param EntityManagerInterface $entityManager
-     * @return Response
      * @Route("/article/insert", name="page_insert")
      */
 
-    public function insertArticle(EntityManagerInterface $entityManager){
-        $entityManager = $this->getDoctrine()->getManager();
+    public function insertArticle(){
+        // createForm methode appartient au abstractController
+        // appelle de la classe CategoryType dans dossier form
+        // il va recuperer dans la class entité Catégory les types pour obtenir les bon inputs en twig
 
-        $article = new Article();
-        $article->setTitle('La plus valus du congo');
-        $article->setContent("La congolexicomatisation c'est inndispensable au congo");
-        $article->setPicture('https://images-na.ssl-images-amazon.com/images/I/71IHBrW5CiL._AC_SY450_.jpg');
-        $article->setCreationdate(new \DateTime());
-        $article->setPublicationdate(new \DateTime());
-        $article->setPublished(1);
+        $form = $this->createForm(ArticleType::class);
+        // createView methode propre au formulaire pour permettre a twig de recuperer le formulaire
+        $formView = $form->createView();
 
-        // tell Doctrine you want to (eventually) save the Product (no queries yet)
-        $entityManager->persist($article);
-
-        // actually executes the queries (i.e. the INSERT query)
-        $entityManager->flush();
-
-        return $this->render('insertArticle.html.twig');
+        return $this->render('insertArticle.html.twig',[
+            'formView' => $formView
+        ]);
 
     }
 
@@ -105,12 +98,12 @@ class ArticleController extends AbstractController
             // ajoute le message d'erreur de types success => action bien prise en compte
             // ajout du message => article est supprimé
             $this->addFlash('success',
-                'Article est supprimé !');
+                "L'article est supprimé !");
         }
 
         // Le message est pris en compte est trasmis à la method ArticleList et donc envoyé au fichier twig
         // -> de la liste des articles
-        return $this->redirectToRoute('article-List');
+        return $this->redirectToRoute('article_List');
 
     }
 

@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 use App\Entity\Category;
+use App\Form\CategoryType;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -38,29 +39,21 @@ class CategoryController extends AbstractController
         ]);
     }
     /**
-     * @param EntityManagerInterface $entityManager
-     * @return Response
      * @Route("/category/insert", name="category_insert")
      */
 
-    // entityMangaer et la methodes pour Insert en sql
-    public function insertCategory(EntityManagerInterface $entityManager){
-        $entityManager = $this->getDoctrine()->getManager();
+    public function insertCategory(){
+        // createForm methode appartient au abstractController
+        // appelle de la classe CategoryType dans dossier form
+        // il va recuperer dans la class entité Catégory les types pour obtenir les bon inputs en twig
+        $form = $this-> createForm(CategoryType::class);
 
-        $category = new Category();
-        $category->setTitle('Pink Power');
-        $category->setColor("pink");
-        $category->setCreationdate(new \DateTime());
-        $category->setPublicationdate(new \DateTime());
-        $category->setPublished(0);
+        // createView methode propre au formulaire pour permettre a twig de recuperer le formulaire
+        $formView = $form->createView();
 
-        // tell Doctrine you want to (eventually) save the Product (no queries yet)
-        $entityManager->persist($category);
-
-        // actually executes the queries (i.e. the INSERT query)
-        $entityManager->flush();
-
-        return $this->render('categoryInsert.html.twig');
+        return $this->render('insertCategory.html.twig',[
+            'formView' => $formView
+        ]);
 
     }
 
@@ -84,5 +77,29 @@ class CategoryController extends AbstractController
         return $this->render('updatesCategory.html.twig');
     }
 
+    /**
+     * @param categoryRepository $categoryRepository
+     * @param EntityManagerInterface $entityManager
+     * @Route("/delete-category/{id}", name="delete_category")
+     */
 
+    public function deletecategory(categoryRepository $categoryRepository, $id, EntityManagerInterface $entityManager){
+
+        // select l'id pour updates la bonne ligne
+        $category = $categoryRepository->find($id);
+
+        if (!is_null($category)) {
+            $entityManager->remove($category);
+            $entityManager->flush();
+            // ajoute le message d'erreur de types success => action bien prise en compte
+            // ajout du message => category est supprimé
+            $this->addFlash('success',
+                "La category est supprimé !");
+        }
+
+        // Le message est pris en compte est trasmis à la method categoryList et donc envoyé au fichier twig
+        // -> de la liste des categorys
+        return $this->redirectToRoute('category_List');
+
+    }
 }
