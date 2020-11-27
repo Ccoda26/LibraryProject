@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
-use phpDocumentor\Reflection\Types\Boolean;
+
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -21,13 +21,14 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     *
      * @Assert\Length(
-     *     min="5",
-     *     max="150",
+     *     min=5,
+     *     max=150,
      *     minMessage=" Ton titre n'est pas assez long",
      *     maxMessage="Ton titre est trop long"
      * )
-     *  @Assert\NotBlank
+     *  @Assert\NotBlank()
      */
     private $title;
 

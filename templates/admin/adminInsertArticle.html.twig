@@ -7,43 +7,52 @@
     <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
 </head>
 <body>
+<header>
         <h1>Création d'article</h1>
+</header>
 {# form(formView) => recupere le formulaire est l'affiche champs apres champs #}
 {{ form_start(formView) }}
-   {{ form_errors(formView) }}
-    <div class="centrer">
+{{ form_errors(formView) }}
+<div class="centrer">
+    <div>
         <h2>{{ form_label(formView.title) }}</h2>
         {# form_widget permet de recuperer uniquement le bloc input sans le nom #}
         {# le tous se recupere avec form_row et le nomdu bloc en form_label #}
-            {{ form_widget(formView.title, {'attr': {'class': 'title'}}) }}
+        {{ form_widget(formView.title, {'attr': {'class': 'title'}}) }}
+        {{ form_errors(formView.title) }}
+    </div>
+    <div>
         <h2>{{ form_label(formView.content) }}</h2>
-            {{ form_widget(formView.content, {'attr': {'class': 'content'}}) }}
+        {{ form_widget(formView.content, {'attr': {'class': 'content'}}) }}
+    </div>
+    <div>
         <h2>{{ form_label(formView.picture) }}</h2>
-            {{ form_widget(formView.picture, {'attr': {'class': 'picture'}}) }}
-        <div class="cote">
-            <div>
+        {{ form_widget(formView.picture, {'attr': {'class': 'picture'}}) }}
+    </div>
+
+    <div class="cote">
+        <div>
             <h2>{{ form_label(formView.publicationdate) }}</h2>
             {{ form_widget(formView.publicationdate, {'attr': {'class': 'publicationdate'}}) }}
-            </div>
-            <div>
+        </div>
+        <div>
             <h2>{{ form_label(formView.creationdate) }}</h2>
             {{ form_widget(formView.creationdate, {'attr': {'class': 'creationdate'}}) }}
-            </div>
         </div>
+    </div>
+
+    <div>
         <h2>{{ form_label(formView.published) }}</h2>
-             {{ form_widget(formView.published) }}
+        {{ form_widget(formView.published) }}
+        <div>
     </div>
     {{ form_widget(formView.valider, {'attr': {'class': 'valider'}}) }}
-
+{{ form_end(formView) }}
 <footer>
 
 
 </footer>
 
-
-
-
-{{ form_end(formView) }}
 
 
 </body>

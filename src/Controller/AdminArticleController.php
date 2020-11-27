@@ -24,7 +24,7 @@ class AdminArticleController extends AbstractController
     public function ArticleList(ArticleRepository $articleRepository){
         $article = $articleRepository ->findAll();
 
-        return $this->render("admin/admin.article.html.twig", [
+        return $this->render("admin/adminArticle.html.twig", [
             'articles' => $article
         ]);
     }
@@ -54,7 +54,7 @@ class AdminArticleController extends AbstractController
                 "L'article est CREATE !");
             return $this->redirectToRoute('admin_article_List');
         }
-        return $this->render("admin/admin.insertArticle.html.twig",[
+        return $this->render("admin/adminInsertArticle.html.twig",[
             'formView' => $formView
         ]);
 
@@ -83,7 +83,7 @@ class AdminArticleController extends AbstractController
 
         $formView = $form->createView();
 
-        return $this->render("admin/admin.updatesArticle.html.twig", [
+        return $this->render("admin/adminUpdatesArticle.html.twig", [
             'formView' => $formView
         ]);
     }

@@ -22,7 +22,7 @@ class AdminCategoryController extends AbstractController
         /* findAll() = select * from catégory */
         $categories = $categoryRepository ->findAll();
 
-        return $this->render("admin/admin.category.html.twig", [
+        return $this->render("admin/adminCategory.html.twig", [
             'categories' => $categories
         ]);
     }
@@ -54,7 +54,7 @@ class AdminCategoryController extends AbstractController
             return $this->redirectToRoute('admin_category_List');
         }
 
-        return $this->render('admin/admin.insertCategory.html.twig',[
+        return $this->render('admin/adminInsertCategory.html.twig',[
             'formView' => $formView
         ]);
 
@@ -78,7 +78,7 @@ class AdminCategoryController extends AbstractController
             return $this->redirectToRoute('admin_category_List');
         }
 
-        return $this->render('admin/admin.updatesCategory.html.twig', [
+        return $this->render('admin/adminUpdatesCategory.html.twig', [
             'formView' => $formView
         ]);
 

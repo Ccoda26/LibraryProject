@@ -10,7 +10,8 @@ body{
 }
 
 .centrer{
-    text-align: center;
+    width: 80%;
+    margin: auto;
 }
 
 h2{
@@ -18,25 +19,25 @@ h2{
 }
 
 .title{
-    width: 30%;
+    width: 50%;
     height: 20px;
     border: 1px black solid;
     margin: 5px;
 
 }
 .content{
-    width: 50%;
+    width: 70%;
     height: 200px;
     margin: 5px;
 }
 
 .color{
-    width: 20%;
+    width: 40%;
     height: 20px;
     margin: 5px;
 }
 .picture{
-    width: 30%;
+    width: 40%;
     height: 20px;
     margin: 5px;
 }
@@ -46,7 +47,7 @@ h2{
     justify-content: center;
 }
 .cote p{
-    margin: 5px 20px;
+    margin: 10px 10px;
 }
 
 .cote div{
@@ -55,7 +56,7 @@ h2{
 
 .publicationdate{
     width: 150px;
-    margin: 5px 10px;
+    margin: 5px 50px;
 }
 .creationdate{
     width: 150px;
