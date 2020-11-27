@@ -3,11 +3,14 @@ body{
     text-align: center;
 }
 
+.nav{
+    text-align: left;
+    color: white;
+    text-decoration: none;
+}
+
 .centrer{
     text-align: center;
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*justify-content: center;*/
 }
 
 h2{
@@ -42,6 +45,10 @@ h2{
     display: flex;
     justify-content: center;
 }
+.cote p{
+    margin: 5px 20px;
+}
+
 .cote div{
     margin: 5px 20px;
 }
@@ -63,4 +70,88 @@ h2{
     height: 50px;
     border-radius: 50px;
     margin: 30px;
+}
+
+/*gestion des articles affichage*/
+header{
+    background-color: #B0413E;
+    padding: 20px;
+    text-align: left;
+}
+
+header >h1{
+    text-align: center;
+}
+
+.organisation{
+    display: flex;
+    flex-wrap: wrap;
+}
+.lien{
+    text-decoration: none;
+    font-size: 30px;
+    color: black;
+}
+
+.lien:hover{
+    font-size: 35px;
+    text-decoration: underline ;
+}
+
+.article{
+    width: 33%;
+    margin: 30px 0px;
+}
+
+/* article simple*/
+.image{
+    width: 50%;
+    margin: auto;
+}
+/*.thearticle{*/
+/*text-align: center;*/
+/*}*/
+
+.resp{
+    width: 100%;
+    height: auto;
+}
+
+
+/* gestion affichage articles admin*/
+.gauche{
+    display: flex;
+    align-items: flex-start;
+    border: 1px black solid;
+    background-color: #AAAAAA;
+    text-decoration: none;
+    padding: 10px;
+    width: 80px;
+    color: #B0413E;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 30px;
+}
+
+.boutton{
+    border: 1px black solid;
+    background-color: #AAAAAA;
+    text-decoration: none;
+    padding: 8px;
+    width: 80px;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    margin :  10px;
+}
+
+.taille{
+    font-size: 30px;
+    color: black;
+    opacity: 0.8;
+}
+.article:hover .taille{
+    opacity: 1;
+    font-size: 35px;
+    text-decoration: underline ;
 }

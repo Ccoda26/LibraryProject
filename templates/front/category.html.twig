@@ -3,13 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-   <style>
-       a{
-       color:black;
-       text-decoration: none;
-       }
-   </style>
 
+    <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
 </head>
 <header>
     {# recupere la variable message de la notif flash en gardant que le messsage #}
@@ -18,17 +13,18 @@
             {{ message }}
         </p>
     {% endfor %}
+    <a href="{{ path('admin_article_List') }}" class="nav">Rôle de l'admin >>></a> <br>
+    <a href="{{ path('article_List') }}" class="nav">Aller vers articles >>></a>
+    <h1 class="centrer">Les categories disponibles</h1>
 </header>
 <body>
-<p><a href="{{ path('admin_category_insert') }}">Creation divine</a></p>
     {% for category in categories %}
         <h1 >
-            <a href="{{ path('admin_categoryShow', {'id' : category.id}) }}" style="color: {{ category.color }}">
+            <a href="{{ path('categoryShow', {'id' : category.id}) }}" style="color: {{ category.color }}">
                 {{ category.title }}
             </a>
         </h1>
-        <p><a href="{{ path('admin_update_category', {'id' : category.id}) }}">Update ça</a></p>
-        <p><a href="{{ path('admin_delete_category', {'id' : category.id}) }}">Supprime ça</a></p>
+
     {% endfor %}
 
 </body>

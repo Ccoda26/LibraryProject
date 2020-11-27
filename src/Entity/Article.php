@@ -20,6 +20,13 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\Length(
+     *     min="5",
+     *     max="150",
+     *     minMessage=" Ton titre n'est pas assez long",
+     *     maxMessage="Ton titre est trop long"
+     * )
+     *  @Assert\NotBlank
      */
     private $title;
 

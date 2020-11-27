@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
+
 </head>
 <body>
 <header>
@@ -12,15 +14,22 @@
             {{ message }}
         </p>
     {% endfor %}
-</header>
-<p><a href="{{ path('admin_page_insert') }}">Creation divine</a></p>
-    {% for article in articles %}
-    <h1>
-        {{ article.title }}
-    </h1>
-        <p><a href="{{ path('admin_update_article', {'id' : article.id}) }}">Update ça</a></p>
-        <p><a href="{{ path('admin_delete_article', {'id' : article.id}) }}">Supprime ça</a></p>
-    {% endfor %}
+    <a href="{{ path('category_List') }}" class="nav">Sortir de l'admin >>></a> <br>
+<a href="{{ path('admin_category_List') }}" class="nav">Aller vers category >>></a>
 
+    <h1>Les articles actuellement disponible</h1>
+</header>
+<a href="{{ path('admin_page_insert') }}" class="gauche">Creation d'Article</a>
+<div class="organisation">
+    {% for article in articles %}
+        <div  class="article">
+    <h2 class="taille">
+        {{ article.title }}
+    </h2>
+            <a  href="{{ path('admin_update_article', {'id' : article.id}) }}"  class="boutton">Update ça</a>
+            <a  href="{{ path('admin_delete_article', {'id' : article.id}) }}" class="boutton">Supprime ça</a>
+        </div>
+    {% endfor %}
+</div>
 </body>
 </html>

@@ -3,12 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-   <style>
-       a{
-       color:black;
-       text-decoration: none;
-       }
-   </style>
+
+    <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
 
 </head>
 <header>
@@ -18,17 +14,23 @@
             {{ message }}
         </p>
     {% endfor %}
+    <a href="{{ path('article_List') }}" class="nav">Sortir de l'admin >>></a> <br>
+    <a href="{{ path('admin_article_List') }}" class="nav">Aller vers articles >>></a>
+
+    <h1>Les catégories actuellement disponible</h1>
 </header>
 <body>
-<p><a href="{{ path('admin_category_insert') }}">Creation divine</a></p>
+<p><a href="{{ path('admin_category_insert') }}" class="gauche">Creation divine</a></p>
+<div class="organisation">
     {% for category in categories %}
+       <article class="article">
         <h1  style="color: {{ category.color }}">
                 {{ category.title }}
-         
         </h1>
-        <p><a href="{{ path('admin_update_category', {'id' : category.id}) }}">Update ça</a></p>
-        <p><a href="{{ path('admin_delete_category', {'id' : category.id}) }}">Supprime ça</a></p>
+        <a href="{{ path('admin_update_category', {'id' : category.id}) }}" class="boutton">Update ça</a>
+        <a href="{{ path('admin_delete_category', {'id' : category.id}) }}" class="boutton">Supprime ça</a>
+       </article>
     {% endfor %}
-
+</div>
 </body>
 </html>

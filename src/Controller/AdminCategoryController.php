@@ -26,7 +26,7 @@ class AdminCategoryController extends AbstractController
             'categories' => $categories
         ]);
     }
-    
+
     /**
      * @Route("/admin/category/insert", name="admin_category_insert")
      */

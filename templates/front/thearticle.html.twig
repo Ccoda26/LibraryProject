@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
 </head>
 <body>
 <h1>{{ article.title }}</h1>
+
+<div class="thearticle">
 <p>{{ article.content }}</p>
-<div>
-    <img src="{{ article.picture }}">
+<div class="image">
+    <img src="{{ article.picture }}" class="resp">
 </div>
 {# filtre |date permet de mettre un format au typr date sinon ça s'affiche pas #}
-<span> Date de creation : {{ article.creationdate|date("m/d/Y h:m:s") }}</span>
+    <div class="cote">
+<p> Date de creation : {{ article.creationdate|date("m/d/Y h:m:s") }}</p>
 <br>
-<span> Date de publication : {{ article.publicationdate|date("m/d/Y h:m:s")}}</span>
+<p> Date de publication : {{ article.publicationdate|date("m/d/Y h:m:s")}}</p></div>
+</div>
 </body>
 </html>
