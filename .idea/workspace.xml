@@ -22,19 +22,8 @@
     <list default="true" id="49ca40cf-d06d-4739-b110-206e699d710b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/asset/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminCategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/admin.article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.article.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/admin.category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.category.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/admin.insertArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.insertArticle.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/admin.insertCategory.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.insertCategory.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/admin.updatesArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.updatesArticle.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/admin.updatesCategory.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.updatesCategory.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front/articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/articles.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front/category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/category.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front/thearticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/thearticle.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +189,7 @@
       <updated>1606143306881</updated>
       <workItem from="1606143308106" duration="3668000" />
       <workItem from="1606208853832" duration="29388000" />
-      <workItem from="1606381011043" duration="34738000" />
+      <workItem from="1606381011043" duration="35541000" />
     </task>
     <servers />
   </component>
