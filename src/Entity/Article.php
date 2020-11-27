@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\Types\Boolean;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -120,12 +121,12 @@ class Article
         return $this;
     }
 
-    public function getPublished(): ?int
+    public function getPublished(): ?Bool
     {
         return $this->published;
     }
 
-    public function setPublished(?int $published): self
+    public function setPublished(?Bool $published): self
     {
         $this->published = $published;
 

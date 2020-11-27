@@ -61,9 +61,12 @@ h2{
     width: 150px;
     margin: 5px;
 }
-.published{
-   width:  30px;
-    margin: 5px;
+
+.valider{
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    margin: 30px;
 }
 
 /*gestion des articles affichage*/
@@ -148,4 +151,8 @@ header >h1{
     opacity: 1;
     font-size: 35px;
     text-decoration: underline ;
+}
+
+footer{
+    height: 100px;
 }

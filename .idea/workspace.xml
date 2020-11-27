@@ -24,6 +24,10 @@
       <change beforePath="$PROJECT_DIR$/public/asset/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/admin.insertArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.insertArticle.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/admin.insertCategory.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.insertCategory.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/admin.updatesArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.updatesArticle.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/admin.updatesCategory.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.updatesCategory.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +193,7 @@
       <updated>1606143306881</updated>
       <workItem from="1606143308106" duration="3668000" />
       <workItem from="1606208853832" duration="29388000" />
-      <workItem from="1606381011043" duration="35541000" />
+      <workItem from="1606381011043" duration="36527000" />
     </task>
     <servers />
   </component>
