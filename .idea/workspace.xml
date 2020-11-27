@@ -20,19 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="49ca40cf-d06d-4739-b110-206e699d710b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminArticleController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/AdminCategoryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin/admin.category.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/front/articles.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/front/thearticle.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CategoryType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CategoryType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/category.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/deleteArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deleteArticle.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/form.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/insertArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/insertArticle.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/insertCategory.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/insertCategory.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/updatesArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/updatesArticle.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/updatesCategory.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/updatesCategory.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/article.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.article.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/category.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/category.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/deleteArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/public/asset/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/insertArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.insertArticle.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/insertCategory.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.insertCategory.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/thearticle.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/thecategory.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/thecategory.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/updatesArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.updatesArticle.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/updatesCategory.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.updatesCategory.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +53,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -168,18 +175,23 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Repository" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/front" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\COURS_SYMFO\LibrariesProject\src\Controller" />
-      <recent name="C:\wamp64\www\COURS_SYMFO\LibrariesProject\vendor" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\COURS_SYMFO\LibrariesProject\templates\front" />
+      <recent name="C:\wamp64\www\COURS_SYMFO\LibrariesProject\src\Controller" />
       <recent name="C:\wamp64\www\COURS_SYMFO\LibrariesProject\src\Repository" />
       <recent name="C:\wamp64\www\COURS_SYMFO\LibrariesProject\templates" />
       <recent name="C:\wamp64\www\COURS_SYMFO\LibrariesProject" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\COURS_SYMFO\LibrariesProject\templates\front" />
+      <recent name="C:\wamp64\www\COURS_SYMFO\LibrariesProject\templates\admin" />
+      <recent name="C:\wamp64\www\COURS_SYMFO\LibrariesProject\src\Controller" />
+      <recent name="C:\wamp64\www\COURS_SYMFO\LibrariesProject\vendor" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -192,7 +204,7 @@
       <updated>1606143306881</updated>
       <workItem from="1606143308106" duration="3668000" />
       <workItem from="1606208853832" duration="29388000" />
-      <workItem from="1606381011043" duration="14485000" />
+      <workItem from="1606381011043" duration="26001000" />
     </task>
     <servers />
   </component>
@@ -216,10 +228,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="561" y="120" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1606317930899" />
-    <state x="293" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606321524798">
+    <state x="293" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606468007487">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="293" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1606321524798" />
+    <state x="293" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1606468007487" />
     <state x="498" y="166" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606403298854">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

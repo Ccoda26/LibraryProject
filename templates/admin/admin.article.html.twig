@@ -13,13 +13,13 @@
         </p>
     {% endfor %}
 </header>
-<p><a href="{{ path('page_insert') }}">Creation divine</a></p>
+<p><a href="{{ path('admin_page_insert') }}">Creation divine</a></p>
     {% for article in articles %}
     <h1>
-        <a href="{{ path('articleShow', {'id' : article.id}) }}">{{ article.title }}</a>
+        {{ article.title }}
     </h1>
-        <p><a href="{{ path('update_article', {'id' : article.id}) }}">Update ça</a></p>
-        <p><a href="{{ path('delete_article', {'id' : article.id}) }}">Supprime ça</a></p>
+        <p><a href="{{ path('admin_update_article', {'id' : article.id}) }}">Update ça</a></p>
+        <p><a href="{{ path('admin_delete_article', {'id' : article.id}) }}">Supprime ça</a></p>
     {% endfor %}
 
 </body>

@@ -1,0 +1,66 @@
+body{
+
+    text-align: center;
+}
+
+.centrer{
+    text-align: center;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: center;*/
+}
+
+h2{
+    font-size: 20px;
+}
+
+.title{
+    width: 30%;
+    height: 20px;
+    border: 1px black solid;
+    margin: 5px;
+
+}
+.content{
+    width: 50%;
+    height: 200px;
+    margin: 5px;
+}
+
+.color{
+    width: 20%;
+    height: 20px;
+    margin: 5px;
+}
+.picture{
+    width: 30%;
+    height: 20px;
+    margin: 5px;
+}
+
+.cote{
+    display: flex;
+    justify-content: center;
+}
+.cote div{
+    margin: 5px 20px;
+}
+
+.publicationdate{
+    width: 150px;
+    margin: 5px 10px;
+}
+.creationdate{
+    width: 150px;
+    margin: 5px;
+}
+.published{
+   width:  30px;
+    margin: 5px;
+}
+.valider{
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    margin: 30px;
+}

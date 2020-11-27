@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
+</head>
+<body>
+
+{# form(formView) => recupere le formulaire est l'affiche champs apres champs #}
+
+<h1>Création d'article</h1>
+{# form(formView) => recupere le formulaire est l'affiche champs apres champs #}
+{{ form_start(formView) }}
+<div class="centrer">
+    <h2>Title</h2>
+    {{ form_widget(formView.title, {'attr': {'class': 'title'}}) }}
+    <h2>Color</h2>
+    {{ form_widget(formView.color, {'attr': {'class': 'color'}}) }}
+    <div class="cote">
+        <div>
+            <h2>Publication date</h2>
+            {{ form_widget(formView.publicationdate, {'attr': {'class': 'publicationdate'}}) }}
+        </div>
+        <div>
+            <h2>Creation date</h2>
+            {{ form_widget(formView.creationdate, {'attr': {'class': 'creationdate'}}) }}
+        </div>
+    </div>
+    <h2>Published</h2>
+    {{ form_widget(formView.published, {'attr': {'class': 'published'}}) }}
+</div>
+{{ form_widget(formView.valider, {'attr': {'class': 'valider'}}) }}
+{{ form_end(formView) }}
+
+
+
+</form>
+
+</body>
+</html>
