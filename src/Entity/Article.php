@@ -24,11 +24,11 @@ class Article
      *
      * @Assert\Length(
      *     min=5,
-     *     max=150,
+     *     max=50,
      *     minMessage=" Ton titre n'est pas assez long",
      *     maxMessage="Ton titre est trop long"
      * )
-     *  @Assert\NotBlank(
+     * @Assert\NotBlank(
      *     message="Tu dois remplir ce champ"
      * )
      *
@@ -47,15 +47,10 @@ class Article
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      *
-     *  @Assert\NotBlank(
+     * @Assert\NotBlank(
      *     message="Tu dois remplir ce champ"
      * )
      *
-     * @Assert\Choice(
-     *     choices={".jpg",".png",".gif"},
-     *     groups={"Update"},
-     *     message="pas possible "
-     *)
      */
 
     private $picture;
@@ -68,7 +63,6 @@ class Article
      * )
      *
      * @Assert\Type("Datetime")
-     *
      *
      * @Assert\Expression(
      *     "this.getpublicationdate() > this.getcreationdate()",
@@ -86,7 +80,7 @@ class Article
      *     message="Tu dois remplir ce champ"
      * )
      *
-     * * @Assert\Type("Datetime")
+     * @Assert\Type("Datetime")
      *
      */
 
@@ -98,6 +92,12 @@ class Article
      */
 
     private $published;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=category::class, inversedBy="articles")
+     */
+    private $category;
+
 
     public function getId(): ?int
     {
@@ -140,38 +140,50 @@ class Article
         return $this;
     }
 
-    public function getPublicationdate(): ?\DateTimeInterface
+    public function getPublicationdate()
     {
         return $this->publicationdate;
     }
 
-    public function setPublicationdate(?\DateTimeInterface $publicationdate): self
+    public function setPublicationdate($publicationdate): self
     {
         $this->publicationdate = $publicationdate;
 
         return $this;
     }
 
-    public function getCreationdate(): ?\DateTimeInterface
+    public function getCreationdate()
     {
         return $this->creationdate;
     }
 
-    public function setCreationdate(?\DateTimeInterface $creationdate): self
+    public function setCreationdate($creationdate): self
     {
         $this->creationdate = $creationdate;
 
         return $this;
     }
 
-    public function getPublished(): ?Bool
+    public function getPublished(): ?bool
     {
         return $this->published;
     }
 
-    public function setPublished(?Bool $published): self
+    public function setPublished(?bool $published): self
     {
         $this->published = $published;
+
+        return $this;
+    }
+
+    public function getCategory(): ?category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }

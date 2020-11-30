@@ -5,6 +5,7 @@ namespace App\Controller;
 
 
 use App\Entity\Article;
+use App\Entity\Category;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -54,6 +55,8 @@ class AdminArticleController extends AbstractController
                 "L'article est CREATE !");
             return $this->redirectToRoute('admin_article_List');
         }
+
+
         return $this->render("admin/adminInsertArticle.html.twig",[
             'formView' => $formView
         ]);

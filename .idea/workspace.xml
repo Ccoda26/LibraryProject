@@ -21,9 +21,15 @@
   <component name="ChangeListManager">
     <list default="true" id="49ca40cf-d06d-4739-b110-206e699d710b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20201127145718.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AdminArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminArticleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Article.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArticleType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/adminArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/adminArticle.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/adminInsertArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/adminInsertArticle.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/adminUpdatesArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/adminUpdatesArticle.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front/articles.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front/articles.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +197,7 @@
       <workItem from="1606143308106" duration="3668000" />
       <workItem from="1606208853832" duration="29388000" />
       <workItem from="1606381011043" duration="41014000" />
-      <workItem from="1606725777173" duration="6969000" />
+      <workItem from="1606725777173" duration="14702000" />
     </task>
     <servers />
   </component>

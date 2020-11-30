@@ -17,11 +17,16 @@
 </header>
     <div class="organisation">
 {% for article in articles %}
-
-    <h2 class="article">
+    <article class="article">
+    <h2>
         <a href="{{ path('articleShow', {'id' : article.id}) }}" class="lien">{{ article.title }}</a>
     </h2>
-
+        {% if article.category is null %}
+        <p> Ce document n'a pas encore de catégorie !</p>
+        {% else %}
+            <p>{{ article.category.title }}</p>
+        {% endif %}
+    </article>
 {% endfor %}
     </div>
 </body>

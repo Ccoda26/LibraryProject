@@ -32,8 +32,15 @@
                 {{ form_widget(formView.creationdate, {'attr': {'class': 'creationdate'}}) }}
             </div>
         </div>
-        <h2>{{ form_label(formView.published) }}</h2>
-        {{ form_widget(formView.published) }}
+            <h2>{{ form_label(formView.published) }}</h2>
+            {{ form_widget(formView.published) }}
+        </div>
+
+        <div>
+            <h2>{{ form_label(formView.category) }}</h2>
+            {{ form_widget(formView.category) }}
+            {{ form_errors(formView.category) }}
+        </div>
 </div>
 {{ form_widget(formView.valider, {'attr': {'class': 'valider'}}) }}
 {{ form_end(formView) }}

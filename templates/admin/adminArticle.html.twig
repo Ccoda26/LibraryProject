@@ -26,6 +26,11 @@
     <h2 class="taille">
         {{ article.title }}
     </h2>
+            {% if article.category is null %}
+                <p> Ce document n'a pas encore de catégorie !</p>
+            {% else %}
+                <p>{{ article.category.title }}</p>
+            {% endif %}
             <a  href="{{ path('admin_update_article', {'id' : article.id}) }}"  class="boutton">Update ça</a>
             <a  href="{{ path('admin_delete_article', {'id' : article.id}) }}" class="boutton">Supprime ça</a>
         </div>
