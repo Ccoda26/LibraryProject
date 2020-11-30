@@ -24,26 +24,31 @@
     <div>
         <h2>{{ form_label(formView.content) }}</h2>
         {{ form_widget(formView.content, {'attr': {'class': 'content'}}) }}
+        {{ form_errors(formView.content) }}
     </div>
     <div>
         <h2>{{ form_label(formView.picture) }}</h2>
         {{ form_widget(formView.picture, {'attr': {'class': 'picture'}}) }}
+        {{ form_errors(formView.picture) }}
     </div>
 
     <div class="cote">
         <div>
             <h2>{{ form_label(formView.publicationdate) }}</h2>
             {{ form_widget(formView.publicationdate, {'attr': {'class': 'publicationdate'}}) }}
+            {{ form_errors(formView.publicationdate) }}
         </div>
         <div>
             <h2>{{ form_label(formView.creationdate) }}</h2>
             {{ form_widget(formView.creationdate, {'attr': {'class': 'creationdate'}}) }}
+            {{ form_errors(formView.creationdate) }}
         </div>
     </div>
 
     <div>
         <h2>{{ form_label(formView.published) }}</h2>
         {{ form_widget(formView.published) }}
+        {{ form_errors(formView.published) }}
         <div>
     </div>
     {{ form_widget(formView.valider, {'attr': {'class': 'valider'}}) }}

@@ -28,33 +28,75 @@ class Article
      *     minMessage=" Ton titre n'est pas assez long",
      *     maxMessage="Ton titre est trop long"
      * )
-     *  @Assert\NotBlank()
+     *  @Assert\NotBlank(
+     *     message="Tu dois remplir ce champ"
+     * )
+     *
+     * @Assert\NotNull(
+     *     message="ton titre n'est pas valide"
+     * )
      */
     private $title;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
+
     private $content;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     *
+     *  @Assert\NotBlank(
+     *     message="Tu dois remplir ce champ"
+     * )
+     *
+     * @Assert\Choice(
+     *     choices={".jpg",".png",".gif"},
+     *     groups={"Update"},
+     *     message="pas possible "
+     *)
      */
+
     private $picture;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     *
+     * @Assert\NotBlank(
+     *     message="Tu dois remplir ce champ"
+     * )
+     *
+     * @Assert\Type("Datetime")
+     *
+     *
+     * @Assert\Expression(
+     *     "this.getpublicationdate() > this.getcreationdate()",
+     *     message="La date de publication ne doit pas être antérieure à la date de creation"
+     * )
      */
+
     private $publicationdate;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     *
+     *
+     * @Assert\NotBlank(
+     *     message="Tu dois remplir ce champ"
+     * )
+     *
+     * * @Assert\Type("Datetime")
+     *
      */
+
     private $creationdate;
 
     /**
      * @ORM\Column(type="boolean", nullable=true)
+     *
      */
+
     private $published;
 
     public function getId(): ?int
