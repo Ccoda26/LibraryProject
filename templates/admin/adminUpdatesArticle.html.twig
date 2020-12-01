@@ -10,37 +10,38 @@
 {# form(formView) => recupere le formulaire est l'affiche champs apres champs #}
 {{ form_start(formView) }}
 
-    {{ form_errors(formView) }}
-    <div class="centrer">
-        <h2>{{ form_label(formView.title) }}</h2>
-        {# form_widget permet de recuperer uniquement le bloc input sans le nom #}
-        {# le tous se recupere avec form_row et le nomdu bloc en form_label #}
-        {{ form_widget(formView.title, {'attr': {'class': 'title'}}) }}
+{{ form_errors(formView) }}
+<div class="centrer">
+    <h2>{{ form_label(formView.title) }}</h2>
+    {# form_widget permet de recuperer uniquement le bloc input sans le nom #}
+    {# le tous se recupere avec form_row et le nomdu bloc en form_label #}
+    {{ form_widget(formView.title, {'attr': {'class': 'title'}}) }}
 
-        <h2>{{ form_label(formView.content) }}</h2>
-        {{ form_widget(formView.content, {'attr': {'class': 'content'}}) }}
+    <h2>{{ form_label(formView.content) }}</h2>
+    {{ form_widget(formView.content, {'attr': {'class': 'content'}}) }}
 
-        <h2>{{ form_label(formView.picture) }}</h2>
-        {{ form_widget(formView.picture, {'attr': {'class': 'picture'}}) }}
-        <div class="cote">
-            <div>
-                <h2>{{ form_label(formView.publicationdate) }}</h2>
-                {{ form_widget(formView.publicationdate, {'attr': {'class': 'publicationdate'}}) }}
-            </div>
-            <div>
-                <h2>{{ form_label(formView.creationdate) }}</h2>
-                {{ form_widget(formView.creationdate, {'attr': {'class': 'creationdate'}}) }}
-            </div>
-        </div>
-            <h2>{{ form_label(formView.published) }}</h2>
-            {{ form_widget(formView.published) }}
-        </div>
-
+    <h2>{{ form_label(formView.imageFile) }}</h2>
+    {{ form_widget(formView.imageFile, {'attr': {'class': 'picture'}}) }}
+    {{ form_errors(formView.imageFile) }}
+    <div class="cote">
         <div>
-            <h2>{{ form_label(formView.category) }}</h2>
-            {{ form_widget(formView.category) }}
-            {{ form_errors(formView.category) }}
+            <h2>{{ form_label(formView.publicationdate) }}</h2>
+            {{ form_widget(formView.publicationdate, {'attr': {'class': 'publicationdate'}}) }}
         </div>
+        <div>
+            <h2>{{ form_label(formView.creationdate) }}</h2>
+            {{ form_widget(formView.creationdate, {'attr': {'class': 'creationdate'}}) }}
+        </div>
+    </div>
+    <h2>{{ form_label(formView.published) }}</h2>
+    {{ form_widget(formView.published) }}
+</div>
+
+<div>
+    <h2>{{ form_label(formView.category) }}</h2>
+    {{ form_widget(formView.category) }}
+    {{ form_errors(formView.category) }}
+</div>
 </div>
 {{ form_widget(formView.valider, {'attr': {'class': 'valider'}}) }}
 {{ form_end(formView) }}

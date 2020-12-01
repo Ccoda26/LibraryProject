@@ -47,13 +47,10 @@ class Article
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      *
-     * @Assert\NotBlank(
-     *     message="Tu dois remplir ce champ"
-     * )
      *
      */
 
-    private $picture;
+    private $imageFile;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
@@ -130,14 +127,14 @@ class Article
         return $this;
     }
 
-    public function getPicture(): ?string
+    public function getImageFile(): ?string
     {
-        return $this->picture;
+        return $this->imageFile;
     }
 
-    public function setPicture(?string $picture): self
+    public function setImageFile(?string $imageFile): self
     {
-        $this->picture = $picture;
+        $this->imageFile = $imageFile;
 
         return $this;
     }

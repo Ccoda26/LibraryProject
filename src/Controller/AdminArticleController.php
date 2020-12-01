@@ -43,9 +43,39 @@ class AdminArticleController extends AbstractController
         $form = $this->createForm(ArticleType::class, $article);
 
         $form->handleRequest($request);
-
+        // si le formulaire est soumis et valid
         if ($form->isSubmitted() && $form->isValid()) {
+        // on recupere l'image du formulaire depuis le champ imageFile
+            $imageFileName = $form->get('imageFile')->getData();
 
+            // si on a un un fichier
+            if ($imageFileName) {
+                // on recupere le nom originel
+                $originalFilename = pathinfo($imageFileName->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                // pour le sécuriser et la rendre unique $slugger permet de reformuler le nom avant de l'enregistrer
+                $safeFilename = $slugger->slug($originalFilename);
+                // le nouveau nom d'images prends la reformulation du slugger que l'on concatene avec
+                // l'extension de l'image
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$imageFileName->guessExtension();
+
+                // Move the file to the directory where images are stored
+                try {
+                    // essaye d'envoyer l'images vers le dossier renseigner
+                    $imageFileName->move(
+                        $this->getParameter('images_directory'),
+                        $newFilename
+                    );
+                   // si il trouve pas il nous renvoi un erreur
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+
+                // updates the 'imageFile' property to store the file name
+                // instead of its contents
+                $article->setImageFile($newFilename);
+            }
+            // si l'image s'enregiste dans notre dossier alors on l'envoi en bdd
             $entityManager->persist($article);
             $entityManager->flush();
             $this->addFlash('success',

@@ -19,7 +19,10 @@ class ArticleType extends AbstractType
         $builder
             ->add('title')
             ->add('content')
-            ->add('picture', FileType::class)
+            ->add('imageFile', FileType::class, [
+                'required' => false,
+                'mapped' => false
+            ])
             ->add('publicationdate', DateType::class, [
                 'widget' => 'single_text',
                 // this is actually the default format for single_text
