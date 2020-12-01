@@ -35,7 +35,7 @@
             <a  href="{{ path('admin_update_article', {'id' : article.id}) }}"  class="boutton">Update ça</a>
             <a  href="{{ path('admin_delete_article', {'id' : article.id}) }}" class="boutton">Supprime ça</a>
 
-            {% if (article.imageFile) %}
+            {% if article.imageFile %}
                 <img src="{{ asset('asset/uploads/images/' ~ article.imageFile) }}" alt="">
             {% endif %}
 

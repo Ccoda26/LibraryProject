@@ -98,7 +98,12 @@ class AdminArticleController extends AbstractController
      * @Route("/admin/update/article/{id}", name="admin_update_article")
      */
 
-    public function updateArticle(Request $request, ArticleRepository $articleRepository, $id, EntityManagerInterface $entityManager)
+    public function updateArticle(Request $request,
+                                  ArticleRepository $articleRepository,
+                                  $id,
+                                  EntityManagerInterface $entityManager,
+                                  SluggerInterface $slugger
+    )
     {
         $article = $articleRepository->find($id);
 
@@ -107,11 +112,44 @@ class AdminArticleController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // on recupere l'image du formulaire depuis le champ imageFile
+            $imageFileName = $form->get('imageFile')->getData();
+
+            // si on a un un fichier
+            if ($imageFileName) {
+                // on recupere le nom originel
+                $originalFilename = pathinfo($imageFileName->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                // pour le sécuriser et la rendre unique $slugger permet de reformuler le nom avant de l'enregistrer
+                $safeFilename = $slugger->slug($originalFilename);
+                // le nouveau nom d'images prends la reformulation du slugger que l'on concatene avec
+                // l'extension de l'image
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$imageFileName->guessExtension();
+
+                // Move the file to the directory where images are stored
+                try {
+                    // essaye d'envoyer l'images vers le dossier renseigner
+                    $imageFileName->move(
+                        $this->getParameter('images_directory'),
+                        $newFilename
+                    );
+                    // si il trouve pas il nous renvoi un erreur
+                } catch (FileException $e) {
+                    error_log("probleme lors du telechargement du fichier ou le dossier n'est pas trouvé");
+                }
+
+                // updates the 'imageFile' property to store the file name
+                // instead of its contents
+                $article->setImageFile($newFilename);
+            }
+            // si l'image s'enregiste dans notre dossier alors on l'envoi en bdd
             // va effectuer la requête d'UPDATE en base de données
             $entityManager->persist($article);
             $entityManager->flush();
             $this->addFlash('success',
                 "L'article est UPDATE !");
+
             return $this->redirectToRoute('admin_article_List');
         }
 

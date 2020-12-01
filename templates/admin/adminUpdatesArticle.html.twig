@@ -23,14 +23,17 @@
     <h2>{{ form_label(formView.imageFile) }}</h2>
     {{ form_widget(formView.imageFile, {'attr': {'class': 'picture'}}) }}
     {{ form_errors(formView.imageFile) }}
+
     <div class="cote">
         <div>
             <h2>{{ form_label(formView.publicationdate) }}</h2>
             {{ form_widget(formView.publicationdate, {'attr': {'class': 'publicationdate'}}) }}
+            {{ form_errors(formView.publicationdate) }}
         </div>
         <div>
             <h2>{{ form_label(formView.creationdate) }}</h2>
             {{ form_widget(formView.creationdate, {'attr': {'class': 'creationdate'}}) }}
+            {{ form_errors(formView.creationdate) }}
         </div>
     </div>
     <h2>{{ form_label(formView.published) }}</h2>
