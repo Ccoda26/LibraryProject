@@ -5,14 +5,13 @@ namespace App\Controller;
 
 
 use App\Entity\Article;
-use App\Entity\Category;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use http\Message;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class AdminArticleController extends AbstractController
 {
@@ -33,7 +32,8 @@ class AdminArticleController extends AbstractController
      * @Route("/admin/article/insert", name="admin_page_insert")
      */
 
-    public function insertArticle(Request $request, EntityManagerInterface $entityManager){
+    public function insertArticle(Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger)
+    {
         // createForm methode appartient au abstractController
         // appelle de la classe CategoryType dans dossier form
         // il va recuperer dans la class entité Catégory les types pour obtenir les bon inputs en twig
@@ -44,20 +44,21 @@ class AdminArticleController extends AbstractController
 
         $form->handleRequest($request);
 
-        // createView methode propre au formulaire pour permettre a twig de recuperer le formulaire
-        $formView = $form->createView();
-
         if ($form->isSubmitted() && $form->isValid()) {
 
             $entityManager->persist($article);
             $entityManager->flush();
             $this->addFlash('success',
                 "L'article est CREATE !");
+
+
             return $this->redirectToRoute('admin_article_List');
         }
 
+        // createView methode propre au formulaire pour permettre a twig de recuperer le formulaire
+        $formView = $form->createView();
 
-        return $this->render("admin/adminInsertArticle.html.twig",[
+        return $this->render("admin/adminInsertArticle.html.twig", [
             'formView' => $formView
         ]);
 

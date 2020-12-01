@@ -52,8 +52,15 @@ class Category
      */
     private $articles;
 
+
+    /**
+     * le __construct contient les elements qui seront transmis par defaut a la nouvelle methode lorsque nous ferons appelle
+     * a la methodes New Category
+     *
+     */
     public function __construct()
     {
+                // ArrayCollection methodes appartenant a symfony
         $this->articles = new ArrayCollection();
     }
 
@@ -125,11 +132,18 @@ class Category
 
     /**
      * @return Collection|Article[]
+     *
+     * permet d'afficher tout les articles
      */
     public function getArticles(): Collection
     {
         return $this->articles;
     }
+
+     /**
+     * une catégories peux etre relie a plusieurs articles donc cela crée un tableau qui va contenir tout les articles
+      * de cette catégory
+     */
 
     public function addArticle(Article $article): self
     {
@@ -140,6 +154,10 @@ class Category
 
         return $this;
     }
+
+    /**
+     * Va permettre de supprimer une liaison category -> articles sans suprimer la catégorie
+     */
 
     public function removeArticle(Article $article): self
     {

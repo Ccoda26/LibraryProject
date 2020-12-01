@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20201130132511 extends AbstractMigration
+final class Version20201201094239 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -20,16 +20,12 @@ final class Version20201130132511 extends AbstractMigration
     public function up(Schema $schema) : void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE article ADD category_id INT DEFAULT NULL');
-        $this->addSql('ALTER TABLE article ADD CONSTRAINT FK_23A0E6612469DE2 FOREIGN KEY (category_id) REFERENCES category (id)');
-        $this->addSql('CREATE INDEX IDX_23A0E6612469DE2 ON article (category_id)');
+        $this->addSql('CREATE TABLE admin (id INT AUTO_INCREMENT NOT NULL, email VARCHAR(180) NOT NULL, roles JSON NOT NULL, password VARCHAR(255) NOT NULL, UNIQUE INDEX UNIQ_880E0D76E7927C74 (email), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
     }
 
     public function down(Schema $schema) : void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE article DROP FOREIGN KEY FK_23A0E6612469DE2');
-        $this->addSql('DROP INDEX IDX_23A0E6612469DE2 ON article');
-        $this->addSql('ALTER TABLE article DROP category_id');
+        $this->addSql('DROP TABLE admin');
     }
 }

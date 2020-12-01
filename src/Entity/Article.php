@@ -95,6 +95,8 @@ class Article
 
     /**
      * @ORM\ManyToOne(targetEntity=category::class, inversedBy="articles")
+     *
+     * inversedBy nous spécifie que la Class catégory renvoie des informations d'article
      */
     private $category;
 

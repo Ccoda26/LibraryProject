@@ -7,6 +7,7 @@ use App\Entity\Category;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,7 +19,7 @@ class ArticleType extends AbstractType
         $builder
             ->add('title')
             ->add('content')
-            ->add('picture')
+            ->add('picture', FileType::class)
             ->add('publicationdate', DateType::class, [
                 'widget' => 'single_text',
                 // this is actually the default format for single_text
@@ -29,6 +30,7 @@ class ArticleType extends AbstractType
             'format' => 'yyyy-MM-dd'])
 
 //EntityType fait appelle a la relation entre articles et catégory qui permet de retorouver le nom de la catégorie
+
             ->add("category", EntityType::class,[
                 "class"=> Category::class,
                 "choice_label"=>"title"])
